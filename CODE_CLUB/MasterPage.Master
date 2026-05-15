@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="CODE_CLUB.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+     <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeClub — <asp:ContentPlaceHolder ID="PageTitle" runat="server">Portfolio</asp:ContentPlaceHolder></title>
+     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <aside class="sidebar" id="sidebar">
+   <div class="sidebar-logo">
+     <span class="logo-icon">&lt;/&gt;</span>
+     <span class="logo-text">CodeClub</span>
+   </div>
+
+   <button class="menu-toggle" id="menuToggle">
+     <span></span><span></span><span></span>
+   </button>
+
+   <nav class="sidebar-nav">
+     <ul>
+       <li><a href="~/Pages/Default.aspx"   runat="server" class="nav-link"><span class="nav-icon">⌂</span> Home</a></li>
+       <li><a href="~/Pages/About.aspx"     runat="server" class="nav-link"><span class="nav-icon">◈</span> About</a></li>
+       <li><a href="~/Pages/Projects.aspx"  runat="server" class="nav-link"><span class="nav-icon">⬡</span> Projects</a></li>
+       <li><a href="~/Pages/Events.aspx"    runat="server" class="nav-link"><span class="nav-icon">◷</span> Events</a></li>
+       <li><a href="~/Pages/Members.aspx"   runat="server" class="nav-link"><span class="nav-icon">◉</span> Members</a></li>
+       <li><a href="~/Pages/Contact.aspx"   runat="server" class="nav-link"><span class="nav-icon">◎</span> Contact</a></li>
+       <li><a href="~/Pages/Feedback.aspx"  runat="server" class="nav-link"><span class="nav-icon">◌</span> Feedback</a></li>
+
+         </ul>
+       </nav>
+         </aside>
+
+     <main class="main-content">
+   <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+ </main>
+
+
+</body>
+</html>
