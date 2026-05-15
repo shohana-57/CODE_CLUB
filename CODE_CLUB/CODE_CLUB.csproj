@@ -67,7 +67,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\CodeClubDB.sql" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Admin\Dahboard.aspx" />
+    <Content Include="Pages\Admin\ManageEvents.aspx" />
+    <Content Include="Pages\Admin\ManageProjects.aspx" />
+    <Content Include="Pages\Contact.aspx" />
+    <Content Include="Pages\Default.aspx" />
+    <Content Include="Pages\Events.aspx" />
+    <Content Include="Pages\Feedback.aspx" />
+    <Content Include="Pages\Join.aspx" />
+    <Content Include="Pages\Login.aspx" />
+    <Content Include="Pages\MemberLogout.aspx" />
+    <Content Include="Pages\Members.aspx" />
+    <Content Include="Pages\Projects.aspx" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Styles\clubStyle.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +98,90 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Admin\Dahboard.aspx.cs">
+      <DependentUpon>Dahboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Dahboard.aspx.designer.cs">
+      <DependentUpon>Dahboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ManageEvents.aspx.cs">
+      <DependentUpon>ManageEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\ManageEvents.aspx.designer.cs">
+      <DependentUpon>ManageEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ManageProjects.aspx.cs">
+      <DependentUpon>ManageProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\ManageProjects.aspx.designer.cs">
+      <DependentUpon>ManageProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Events.aspx.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Events.aspx.designer.cs">
+      <DependentUpon>Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Join.aspx.cs">
+      <DependentUpon>Join.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Join.aspx.designer.cs">
+      <DependentUpon>Join.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MemberLogout.aspx.cs">
+      <DependentUpon>MemberLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MemberLogout.aspx.designer.cs">
+      <DependentUpon>MemberLogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Members.aspx.cs">
+      <DependentUpon>Members.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Members.aspx.designer.cs">
+      <DependentUpon>Members.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -97,11 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Database\" />
     <Folder Include="Models\" />
-    <Folder Include="Pages\Admin\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="Styles\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
