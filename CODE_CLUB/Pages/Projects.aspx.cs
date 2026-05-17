@@ -26,7 +26,7 @@ public partial class Pages_Projects : System.Web.UI.Page
         }
     }
 
-    // Called from .aspx to build tech badge spans
+    
     protected string BuildTechBadges(string technologies)
     {
         if (string.IsNullOrWhiteSpace(technologies)) return "";
