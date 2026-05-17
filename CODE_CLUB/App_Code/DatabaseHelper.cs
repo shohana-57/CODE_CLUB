@@ -18,7 +18,7 @@ public static class DatabaseHelper
     }
 
    
-
+    //Projects
 
     public static DataTable GetProjects(bool visibleOnly = true)
     {
@@ -69,7 +69,7 @@ public static class DatabaseHelper
     }
 
 
-
+    //Events
     public static DataTable GetEvents(bool visibleOnly = true)
     {
         string sql = visibleOnly
@@ -114,6 +114,97 @@ public static class DatabaseHelper
             return cmd.ExecuteNonQuery() > 0;
         }
     }
+
+    //Contacts
+    public static bool SaveContact(string name, string email, string message)
+    {
+        const string sql = "INSERT INTO Contacts (Name,Email,Message) VALUES (@n,@e,@m)";
+        using (var conn = GetConnection())
+        using (var cmd = new SqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("@n", name);
+            cmd.Parameters.AddWithValue("@e", email);
+            cmd.Parameters.AddWithValue("@m", message);
+            return cmd.ExecuteNonQuery() > 0;
+        }
+    }
+
+
+    public static DataTable GetContacts()
+    {
+        const string sql = "SELECT * FROM Contacts ORDER BY SubmittedAt DESC";
+        using (var conn = GetConnection())
+        using (var cmd = new SqlCommand(sql, conn))
+        {
+            var da = new SqlDataAdapter(cmd);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+    }
+
+    //Feedback
+
+    public static bool SaveFeedback(string name, string email,
+                                     string message, int rating)
+    {
+        const string sql = "INSERT INTO Feedback (Name,Email,Message,Rating) VALUES (@n,@e,@m,@r)";
+        using (var conn = GetConnection())
+        using (var cmd = new SqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("@n", name);
+            cmd.Parameters.AddWithValue("@e", email);
+            cmd.Parameters.AddWithValue("@m", message);
+            cmd.Parameters.AddWithValue("@r", rating);
+            return cmd.ExecuteNonQuery() > 0;
+        }
+    }
+
+
+    public static DataTable GetFeedback()
+    {
+        const string sql = "SELECT * FROM Feedback ORDER BY SubmittedAt DESC";
+        using (var conn = GetConnection())
+        using (var cmd = new SqlCommand(sql, conn))
+        {
+            var da = new SqlDataAdapter(cmd);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+    }
+
+
+    //Password Hasing
+
+    public static string HashPassword(string password)
+    {
+        using (var sha = SHA256.Create())
+        {
+            byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
+            var sb = new StringBuilder();
+            foreach (byte b in bytes) sb.Append(b.ToString("x2"));
+            return sb.ToString();
+        }
+    }
+
+    //Admin
+    public static bool ValidateAdmin(string username, string password)
+    {
+        string hash = HashPassword(password);
+        const string sql = "SELECT COUNT(1) FROM Admins WHERE Username=@u AND PasswordHash=@p";
+        using (var conn = GetConnection())
+        using (var cmd = new SqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("@u", username);
+            cmd.Parameters.AddWithValue("@p", hash);
+            return (int)cmd.ExecuteScalar() > 0;
+        }
+    }
+
+
+
+
 
 
 }
