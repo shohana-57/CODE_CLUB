@@ -17,7 +17,7 @@ public static class DatabaseHelper
         return conn;
     }
 
-   
+
     //Projects
 
     public static DataTable GetProjects(bool visibleOnly = true)
@@ -201,6 +201,73 @@ public static class DatabaseHelper
             return (int)cmd.ExecuteScalar() > 0;
         }
     }
+
+
+    //Members
+
+    public static bool EmailExists(string email)
+    {
+        const string sql = "SELECT COUNT(1) FROM Members WHERE Email=@e";
+        using (var conn = GetConnection())
+        using (var cmd = new SqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("@e", email.Trim().ToLower());
+            return (int)cmd.ExecuteScalar() > 0;
+        }
+    }
+
+    public static bool RegisterMember(string fullName, string email,
+                                     string password, string skillLevel,
+                                     string whyJoin)
+    {
+        const string sql = @"INSERT INTO Members (FullName,Email,PasswordHash,SkillLevel,WhyJoin)
+                             VALUES (@name,@email,@pwd,@skill,@why)";
+        using (var conn = GetConnection())
+        using (var cmd = new SqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("@name", fullName);
+            cmd.Parameters.AddWithValue("@email", email.Trim().ToLower());
+            cmd.Parameters.AddWithValue("@pwd", HashPassword(password));
+            cmd.Parameters.AddWithValue("@skill", skillLevel ?? "");
+            cmd.Parameters.AddWithValue("@why", whyJoin ?? "");
+            return cmd.ExecuteNonQuery() > 0;
+        }
+    }
+
+    public static DataRow ValidateMember(string email, string password)
+    {
+        string hash = HashPassword(password);
+        const string sql = @"SELECT MemberID,FullName,Email,Role
+                             FROM Members
+                             WHERE Email=@e AND PasswordHash=@p AND IsActive=1";
+        using (var conn = GetConnection())
+        using (var cmd = new SqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("@e", email.Trim().ToLower());
+            cmd.Parameters.AddWithValue("@p", hash);
+            var da = new SqlDataAdapter(cmd);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt.Rows.Count > 0 ? dt.Rows[0] : null;
+        }
+    }
+
+    //Members List
+
+    public static DataTable GetMembers()
+    {
+        const string sql = @"SELECT MemberID,FullName,Email,SkillLevel,Role,JoinedAt
+                             FROM Members ORDER BY JoinedAt DESC";
+        using (var conn = GetConnection())
+        using (var cmd = new SqlCommand(sql, conn))
+        {
+            var da = new SqlDataAdapter(cmd);
+            var dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+    }
+
 
 
 
