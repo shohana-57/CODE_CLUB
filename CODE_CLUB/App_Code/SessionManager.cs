@@ -68,6 +68,73 @@ namespace CODE_CLUB.App_Code
             };
             HttpContext.Current.Response.Cookies.Add(sessionCookie);
         }
+        public static string GetRememberedAdmin()
+        {
+            var cookie = HttpContext.Current.Request.Cookies[COOKIE_REMEMBER_ADMIN];
+            return cookie?.Value;
+        }
+
+        public static void SetMemberSession(int memberId, string fullName,
+                                        string email, string role)
+        {
+            HttpContext.Current.Session[KEY_MEMBER_ID] = memberId;
+            HttpContext.Current.Session[KEY_MEMBER_NAME] = fullName;
+            HttpContext.Current.Session[KEY_MEMBER_EMAIL] = email;
+            HttpContext.Current.Session[KEY_MEMBER_ROLE] = role;
+
+            var cookie = new HttpCookie(COOKIE_VISITOR_NAME, fullName)
+            {
+                Expires = DateTime.Now.AddDays(1),
+                HttpOnly = true
+            };
+            HttpContext.Current.Response.Cookies.Add(cookie);
+        }
+
+        public static bool IsMemberLoggedIn()
+        {
+            return HttpContext.Current.Session[KEY_MEMBER_ID] != null;
+        }
+
+        public static int GetMemberID()
+        {
+            var val = HttpContext.Current.Session[KEY_MEMBER_ID];
+            return val != null ? (int)val : 0;
+        }
+
+
+        public static string GetMemberName()
+        {
+            return HttpContext.Current.Session[KEY_MEMBER_NAME]?.ToString() ?? "";
+        }
+
+        public static string GetMemberEmail()
+        {
+            return HttpContext.Current.Session[KEY_MEMBER_EMAIL]?.ToString() ?? "";
+        }
+
+        public static void LogoutMember()
+        {
+            HttpContext.Current.Session.Abandon();
+
+            var cookie = new HttpCookie(COOKIE_VISITOR_NAME, "")
+            {
+                Expires = DateTime.Now.AddDays(-1)
+            };
+            HttpContext.Current.Response.Cookies.Add(cookie);
+
+            var sessionCookie = new HttpCookie("CodeClubSession", "")
+            {
+                Expires = DateTime.Now.AddDays(-1)
+            };
+            HttpContext.Current.Response.Cookies.Add(sessionCookie);
+        }
+
+        public static string GetVisitorName()
+        {
+            var cookie = HttpContext.Current.Request.Cookies[COOKIE_VISITOR_NAME];
+            return cookie?.Value ?? "";
+        }
+
 
     }
 }
