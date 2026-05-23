@@ -8,7 +8,7 @@ using System.Text;
 
 public static class DatabaseHelper
 {
-    private static string ConnStr => ConfigurationManager.ConnectionStrings["CODECLUBDB"].ConnectionString;
+    private static string ConnStr => ConfigurationManager.ConnectionStrings["CodeClubDB"].ConnectionString;
 
     private static SqlConnection GetConnection()
     {
@@ -118,7 +118,7 @@ public static class DatabaseHelper
     //Contacts
     public static bool SaveContact(string name, string email, string message)
     {
-        const string sql = "INSERT INTO Contacts (Name,Email,Message) VALUES (@n,@e,@m)";
+        const string sql = @"INSERT INTO Contacts (Name,Email,Message) VALUES (@n,@e,@m)";
         using (var conn = GetConnection())
         using (var cmd = new SqlCommand(sql, conn))
         {
@@ -148,7 +148,7 @@ public static class DatabaseHelper
     public static bool SaveFeedback(string name, string email,
                                      string message, int rating)
     {
-        const string sql = "INSERT INTO Feedback (Name,Email,Message,Rating) VALUES (@n,@e,@m,@r)";
+        const string sql = @"INSERT INTO Feedback (Name,Email,Message,Rating) VALUES (@n,@e,@m,@r)";
         using (var conn = GetConnection())
         using (var cmd = new SqlCommand(sql, conn))
         {
@@ -192,7 +192,7 @@ public static class DatabaseHelper
     public static bool ValidateAdmin(string username, string password)
     {
         string hash = HashPassword(password);
-        const string sql = "SELECT COUNT(1) FROM Admins WHERE Username=@u AND PasswordHash=@p";
+        const string sql = @"SELECT COUNT(1) FROM Admins WHERE Username=@u AND PasswordHash=@p";
         using (var conn = GetConnection())
         using (var cmd = new SqlCommand(sql, conn))
         {
@@ -216,9 +216,7 @@ public static class DatabaseHelper
         }
     }
 
-    public static bool RegisterMember(string fullName, string email,
-                                     string password, string skillLevel,
-                                     string whyJoin)
+    public static bool RegisterMember(string fullName, string email,string password, string skillLevel,string whyJoin)
     {
         const string sql = @"INSERT INTO Members (FullName,Email,PasswordHash,SkillLevel,WhyJoin)
                              VALUES (@name,@email,@pwd,@skill,@why)";
@@ -250,6 +248,11 @@ public static class DatabaseHelper
             da.Fill(dt);
             return dt.Rows.Count > 0 ? dt.Rows[0] : null;
         }
+    }
+
+    public static void RecordMemberLogout(int memberId)
+    {
+       
     }
 
     //Members List

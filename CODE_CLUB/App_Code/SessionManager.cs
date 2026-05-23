@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Security;
 
-namespace CODE_CLUB.App_Code
-{
-    public class SessionManager
+ public static class SessionManager
     {
         private const string KEY_ADMIN_NAME = "AdminName";
         private const string KEY_ADMIN_ID = "AdminID";
@@ -31,7 +27,8 @@ namespace CODE_CLUB.App_Code
                 var cookie = new HttpCookie(COOKIE_REMEMBER_ADMIN, username)
                 {
                     Expires = DateTime.Now.AddDays(7),
-                    HttpOnly = true
+                    HttpOnly = true,
+                    Secure = false
                 };
                 HttpContext.Current.Response.Cookies.Add(cookie);
             }
@@ -58,7 +55,8 @@ namespace CODE_CLUB.App_Code
 
             var cookie = new HttpCookie(COOKIE_REMEMBER_ADMIN, "")
             {
-                Expires = DateTime.Now.AddDays(-1)
+                Expires = DateTime.Now.AddDays(-1),
+                HttpOnly = true
             };
             HttpContext.Current.Response.Cookies.Add(cookie);
 
@@ -137,4 +135,3 @@ namespace CODE_CLUB.App_Code
 
 
     }
-}
