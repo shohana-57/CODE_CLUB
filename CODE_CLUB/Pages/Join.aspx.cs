@@ -38,7 +38,6 @@ public partial class Pages_Join : System.Web.UI.Page
 
         if (ok)
         {
-            // Validate and auto-login the new member
             var row = DatabaseHelper.ValidateMember(email, pwd);
             if (row != null)
             {
