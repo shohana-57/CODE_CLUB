@@ -69,7 +69,7 @@
   <ItemGroup>
     <Content Include="Database\CodeClubDB.sql" />
     <Content Include="Global.asax" />
-    <Content Include="Pages\Admin\Dahboard.aspx" />
+    <Content Include="Pages\Admin\Dashboard.aspx" />
     <Content Include="Pages\Admin\ManageEvents.aspx" />
     <Content Include="Pages\Admin\ManageProjects.aspx" />
     <Content Include="Pages\Contact.aspx" />
@@ -86,8 +86,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\DatabaseHelper.cs" />
-    <Content Include="App_Code\SessionManager.cs" />
+    <None Include="App_Code\DatabaseHelper.cs" />
+    <None Include="App_Code\SessionManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -98,12 +98,12 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Admin\Dahboard.aspx.cs">
-      <DependentUpon>Dahboard.aspx</DependentUpon>
+    <Compile Include="Pages\Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Admin\Dahboard.aspx.designer.cs">
-      <DependentUpon>Dahboard.aspx</DependentUpon>
+    <Compile Include="Pages\Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\ManageEvents.aspx.cs">
       <DependentUpon>ManageEvents.aspx</DependentUpon>
