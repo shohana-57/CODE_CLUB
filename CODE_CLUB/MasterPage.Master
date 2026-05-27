@@ -33,31 +33,32 @@
        <li><a href="~/Pages/Contact.aspx"   runat="server" class="nav-link"><span class="nav-icon">◎</span> Contact</a></li>
        <li><a href="~/Pages/Feedback.aspx"  runat="server" class="nav-link"><span class="nav-icon">◌</span> Feedback</a></li>
 
-         <% if (SessionManager.IsMemberLoggedIn()) { %>
-          <li class="nav-member-info">
-            <span class="nav-icon">✦</span>
-            Hi, <strong><%= SessionManager.GetMemberName() %></strong>
-          </li>
-          <li>
-               <a href="~/Pages/MemberLogout.aspx" runat="server" class="nav-link nav-logout">
-              <span class="nav-icon">⇤</span> Logout
-            </a>
-          </li>
-        <% } else { %>
-          <li><a href="~/Pages/Join.aspx"  runat="server" class="nav-link"><span class="nav-icon">✦</span> Join Us</a></li>
-          <li><a href="~/Pages/Login.aspx" runat="server" class="nav-link"><span class="nav-icon">⚿</span> Login</a></li>
-        <% } %>
+        <asp:Panel ID="phMember" runat="server">
+           <li class="nav-member-info">
+             <span class="nav-icon">✦</span>
+             Hi, <strong><asp:Literal ID="litMemberName" runat="server" /></strong>
+           </li>
+           <li>
+                <a href="~/Pages/MemberLogout.aspx" runat="server" class="nav-link nav-logout">
+               <span class="nav-icon">⇤</span> Logout
+             </a>
+           </li>
+        </asp:Panel>
+        <asp:Panel ID="phGuest" runat="server">
+           <li><a href="~/Pages/Join.aspx"  runat="server" class="nav-link"><span class="nav-icon">✦</span> Join Us</a></li>
+           <li><a href="~/Pages/Login.aspx" runat="server" class="nav-link"><span class="nav-icon">⚿</span> Login</a></li>
+        </asp:Panel>
 
 
          </ul>
        </nav>
 
-          <% if (SessionManager.IsAdminLoggedIn()) { %>
+        <asp:Panel ID="phAdmin" runat="server">
     <div class="admin-badge">
-      <span>⚙</span> Admin: <%= SessionManager.GetAdminName() %>
+      <span>⚙</span> Admin: <asp:Literal ID="litAdminName" runat="server" />
       <a href="~/Pages/Admin/Dashboard.aspx" runat="server">Dashboard</a>
     </div>
-    <% } %>
+        </asp:Panel>
 
     <div class="sidebar-footer">
       <p>© 2025 CodeClub</p>

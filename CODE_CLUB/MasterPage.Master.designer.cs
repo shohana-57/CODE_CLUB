@@ -7,38 +7,48 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CODE_CLUB
+
+public partial class MasterPage
 {
 
+    /// <summary>
+    /// PageTitle control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ContentPlaceHolder PageTitle;
 
-    public partial class MasterPage
-    {
+    /// <summary>
+    /// HeadContent control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
 
-        /// <summary>
-        /// PageTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageTitle;
+    /// <summary>
+    /// MainContent control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
 
-        /// <summary>
-        /// HeadContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+    protected global::System.Web.UI.Control phMember;
 
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
-    }
+    protected global::System.Web.UI.Control phGuest;
+
+    protected global::System.Web.UI.WebControls.Literal litMemberName;
+
+    protected global::System.Web.UI.Control phAdmin;
+
+    protected global::System.Web.UI.WebControls.Literal litAdminName;
 }
+
+
+
+

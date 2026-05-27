@@ -6,12 +6,8 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-namespace CODE_CLUB.Pages
+public partial class Pages_Feedback
 {
 
-
-    public partial class Feedback
-    {
-    }
 }
+   

@@ -7,11 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CODE_CLUB.Pages.Admin
+public partial class Pages_Admin_ManageEvents
 {
+   
 
-
-    public partial class ManageEvents
-    {
-    }
 }
+   

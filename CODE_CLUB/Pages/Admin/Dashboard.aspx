@@ -6,7 +6,7 @@
     <div class="section-label">// ADMIN PANEL</div>
     <h2 class="section-title">Dashboard</h2>
     <p class="admin-welcome">
-      Welcome back, <strong><%= SessionManager.GetAdminName() %></strong>
+      Welcome back, <strong><asp:Literal ID="litWelcome" runat="server" /></strong>
     </p>
 
     <div class="admin-stats">

@@ -7,11 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CODE_CLUB.Pages.Admin
+public partial class Pages_Admin_ManageProjects
 {
+    protected global::System.Web.UI.WebControls.Panel pnlMsg;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl addMsg;
+    protected global::System.Web.UI.WebControls.TextBox txtTitle;
+    protected global::System.Web.UI.WebControls.TextBox txtCategory;
+    protected global::System.Web.UI.WebControls.TextBox txtDesc;
+    protected global::System.Web.UI.WebControls.TextBox txtTech;
+    protected global::System.Web.UI.WebControls.TextBox txtUrl;
+    protected global::System.Web.UI.WebControls.Button btnAdd;
+    protected global::System.Web.UI.WebControls.GridView gvProjects;
 
-
-    public partial class ManageProjects
-    {
-    }
 }
+   

@@ -7,12 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CODE_CLUB.Pages
+public partial class Pages_Events
 {
-
-
-    public partial class Events
-    {
 
         /// <summary>
         /// rptEvents control.
@@ -31,5 +27,5 @@ namespace CODE_CLUB.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEmpty;
-    }
+    
 }

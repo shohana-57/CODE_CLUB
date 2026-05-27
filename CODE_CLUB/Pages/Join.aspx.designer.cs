@@ -7,11 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CODE_CLUB.Pages
+public partial class Pages_Join
 {
 
-
-    public partial class Join
-    {
-    }
 }
+   

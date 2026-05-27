@@ -4,9 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 
-public partial class Pages_Admin_Dahboard : System.Web.UI.Page
+public partial class Pages_Admin_Dashboard : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -29,6 +30,7 @@ public partial class Pages_Admin_Dahboard : System.Web.UI.Page
         DataTable contacts = DatabaseHelper.GetContacts();
         DataTable feedback = DatabaseHelper.GetFeedback();
 
+        litWelcome.Text = SessionManager.IsAdminLoggedIn() ? SessionManager.GetAdminName(): "";
         litMembers.Text = members.Rows.Count.ToString();
         litProjects.Text = projects.Rows.Count.ToString();
         litEvents.Text = events.Rows.Count.ToString();

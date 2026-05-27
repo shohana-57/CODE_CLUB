@@ -7,11 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CODE_CLUB.Pages
+public partial class Pages_Projects
 {
 
-
-    public partial class Projects
-    {
-    }
 }

@@ -7,11 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CODE_CLUB.Pages.Admin
+public partial class Pages_Admin_Dashboard
 {
-
-
-    public partial class Dahboard
-    {
-    }
+    protected global::System.Web.UI.WebControls.Literal litMembers;
+    protected global::System.Web.UI.WebControls.Literal litProjects;
+    protected global::System.Web.UI.WebControls.Literal litEvents;
+    protected global::System.Web.UI.WebControls.Literal litContacts;
+    protected global::System.Web.UI.WebControls.GridView gvMembers;
+    protected global::System.Web.UI.WebControls.GridView gvFeedback;
+    protected global::System.Web.UI.WebControls.GridView gvContacts;
+    protected global::System.Web.UI.WebControls.Literal litWelcome;
 }
+    
