@@ -10,22 +10,7 @@
 public partial class Pages_Events
 {
 
-        /// <summary>
-        /// rptEvents control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptEvents;
-
-        /// <summary>
-        /// lblEmpty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmpty;
+     protected global::System.Web.UI.WebControls.Repeater rptEvents;
+     protected global::System.Web.UI.WebControls.Label lblEmpty;
     
 }

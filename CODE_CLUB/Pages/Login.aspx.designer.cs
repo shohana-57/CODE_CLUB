@@ -9,6 +9,15 @@
 
 public partial class Pages_Login
 {
+    protected global::System.Web.UI.WebControls.Panel pnlError;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl errMsg;
+    protected global::System.Web.UI.WebControls.TextBox txtMemberEmail;
+    protected global::System.Web.UI.WebControls.TextBox txtMemberPwd;
+    protected global::System.Web.UI.WebControls.Button btnMemberLogin;
+    protected global::System.Web.UI.WebControls.TextBox txtAdminUser;
+    protected global::System.Web.UI.WebControls.TextBox txtAdminPwd;
+    protected global::System.Web.UI.WebControls.CheckBox chkRemember;
+    protected global::System.Web.UI.WebControls.Button btnAdminLogin;
 
 }
    

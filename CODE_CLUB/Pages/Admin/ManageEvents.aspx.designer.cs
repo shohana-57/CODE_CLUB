@@ -9,7 +9,15 @@
 
 public partial class Pages_Admin_ManageEvents
 {
-   
+    protected global::System.Web.UI.WebControls.Panel pnlMsg;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl addMsg;
+    protected global::System.Web.UI.WebControls.TextBox txtTitle;
+    protected global::System.Web.UI.WebControls.DropDownList ddlType;
+    protected global::System.Web.UI.WebControls.TextBox txtDate;
+    protected global::System.Web.UI.WebControls.TextBox txtDesc;
+    protected global::System.Web.UI.WebControls.Button btnAdd;
+    protected global::System.Web.UI.WebControls.GridView gvEvents;
+
 
 }
    

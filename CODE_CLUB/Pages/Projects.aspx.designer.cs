@@ -9,5 +9,7 @@
 
 public partial class Pages_Projects
 {
+    protected global::System.Web.UI.WebControls.Repeater rptProjects;
+    protected global::System.Web.UI.WebControls.Label lblEmpty;
 
 }

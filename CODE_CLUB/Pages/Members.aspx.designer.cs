@@ -9,6 +9,8 @@
 
 public partial class Pages_Members
 {
+    protected global::System.Web.UI.WebControls.Repeater rptMembers;
+    protected global::System.Web.UI.WebControls.Label lblEmpty;
 
 }
 

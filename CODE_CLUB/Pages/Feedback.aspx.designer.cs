@@ -8,6 +8,13 @@
 //------------------------------------------------------------------------------
 public partial class Pages_Feedback
 {
+    protected global::System.Web.UI.WebControls.Panel pnlSuccess;
+    protected global::System.Web.UI.WebControls.Panel pnlForm;
+    protected global::System.Web.UI.WebControls.HiddenField hdnRating;
+    protected global::System.Web.UI.WebControls.TextBox txtName;
+    protected global::System.Web.UI.WebControls.TextBox txtEmail;
+    protected global::System.Web.UI.WebControls.TextBox txtFeedback;
+    protected global::System.Web.UI.WebControls.Button btnSubmit;
 
 }
    

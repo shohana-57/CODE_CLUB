@@ -9,6 +9,16 @@
 
 public partial class Pages_Join
 {
+    protected global::System.Web.UI.WebControls.Panel pnlMessage;
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl formMsg;
+    protected global::System.Web.UI.WebControls.Panel pnlForm;
+    protected global::System.Web.UI.WebControls.TextBox txtName;
+    protected global::System.Web.UI.WebControls.TextBox txtEmail;
+    protected global::System.Web.UI.WebControls.TextBox txtPassword;
+    protected global::System.Web.UI.WebControls.TextBox txtConfirm;
+    protected global::System.Web.UI.WebControls.DropDownList ddlSkill;
+    protected global::System.Web.UI.WebControls.TextBox txtWhy;
+    protected global::System.Web.UI.WebControls.Button btnJoin;
 
 }
    
