@@ -12,11 +12,11 @@ public partial class Pages_Join : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (SessionManager.ISMemberLoggedIn())
+        if (SessionManager.IsMemberLoggedIn())
             Response.Redirect("~/Pages/Default.aspx");
     }
 
-    protected void btnJoin_click(object sender, EventArgs e)
+    protected void btnJoin_Click(object sender, EventArgs e)
     {
         if (!Page.IsValid) return;
 

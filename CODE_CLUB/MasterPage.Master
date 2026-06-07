@@ -13,6 +13,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+   <form id="frmMain" runat="server">
      <aside class="sidebar" id="sidebar">
    <div class="sidebar-logo">
      <span class="logo-icon">&lt;/&gt;</span>
@@ -70,7 +71,7 @@
  </main>
      <div class="toast" id="toast"></div>
 
- <script src="~/Scripts/script.js" runat="server"></script>
-
+    <script src="/Scripts/script.js"></script>
+</form>
 </body>
 </html>
