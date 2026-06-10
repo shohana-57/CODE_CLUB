@@ -10,8 +10,7 @@ public partial class Pages_Login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (SessionManager.IsMemberLoggedIn() || SessionManager.IsAdminLoggedIn())
-            Response.Redirect("~/Pages/Default.aspx");
+       
 
         if (!IsPostBack)
         {
@@ -49,7 +48,7 @@ public partial class Pages_Login : System.Web.UI.Page
         else
         {
             ShowError("Invalid email or password. Please try again.");
-            txtMemberPwd.Text = ""; // clear password field
+            txtMemberPwd.Text = ""; 
         }
     }
 
