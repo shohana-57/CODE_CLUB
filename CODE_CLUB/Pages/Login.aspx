@@ -50,7 +50,7 @@
       </div>
 
      
-      <div id="tabAdmin" class="login-tab-content">
+      <div id="tabAdmin" class="login-tab-content active">
         <div class="form-group">
           <label>Username</label>
           <asp:TextBox ID="txtAdminUser" runat="server"
@@ -76,19 +76,22 @@
   </section>
 
   <script>
-      function switchTab(tab, btn) {
-        
+      function switchTab(tab, btn)
+      {
+
           var tabs = document.querySelectorAll('.login-tab-content');
           tabs.forEach(function (t) { t.classList.remove('active'); });
 
-        
+
           var btns = document.querySelectorAll('.tab-btn');
           btns.forEach(function (b) { b.classList.remove('active'); });
 
-          
+
           document.getElementById('tab' + tab).classList.add('active');
           btn.classList.add('active');
       }
+     
+
   </script>
 
 </asp:Content>

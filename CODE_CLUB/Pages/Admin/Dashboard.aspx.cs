@@ -23,23 +23,43 @@ public partial class Pages_Admin_Dashboard : System.Web.UI.Page
     }
 
     private void LoadDashboard()
+
     {
-        DataTable members = DatabaseHelper.GetMembers();
-        DataTable projects = DatabaseHelper.GetProjects(visibleOnly: false);
-        DataTable events = DatabaseHelper.GetEvents(visibleOnly: false);
-        DataTable contacts = DatabaseHelper.GetContacts();
-        DataTable feedback = DatabaseHelper.GetFeedback();
+        try
+        {
+            DataTable members = DatabaseHelper.GetMembers();
+            DataTable projects = DatabaseHelper.GetProjects(visibleOnly: false);
+            DataTable events = DatabaseHelper.GetEvents(visibleOnly: false);
+            DataTable contacts = DatabaseHelper.GetContacts();
+            DataTable feedback = DatabaseHelper.GetFeedback();
 
-        litWelcome.Text = SessionManager.IsAdminLoggedIn() ? SessionManager.GetAdminName(): "";
-        litMembers.Text = members.Rows.Count.ToString();
-        litProjects.Text = projects.Rows.Count.ToString();
-        litEvents.Text = events.Rows.Count.ToString();
-        litContacts.Text = contacts.Rows.Count.ToString();
+            litWelcome.Text = SessionManager.IsAdminLoggedIn() ? SessionManager.GetAdminName() : "";
+            litMembers.Text = members.Rows.Count.ToString();
+            litProjects.Text = projects.Rows.Count.ToString();
+            litEvents.Text = events.Rows.Count.ToString();
+            litContacts.Text = contacts.Rows.Count.ToString();
 
-        gvMembers.DataSource = members;
-        gvMembers.DataBind();
+            gvMembers.DataSource = members;
+            gvMembers.DataBind();
 
-        gvFeedback.DataSource = feedback;
-        gvFeedback.DataBind();
+            gvFeedback.DataSource = feedback;
+            gvFeedback.DataBind();
+
+            gvContacts.DataSource = contacts;
+            gvContacts.DataBind();
+
+
+        }
+        catch(Exception ex)
+        
+        {
+            Response.Write("<div style='color:red;padding:20px'>" +
+               "Dashboard Error: " + ex.Message + "</div>");
+        }
+
     }
+       
+        
+
+
 }

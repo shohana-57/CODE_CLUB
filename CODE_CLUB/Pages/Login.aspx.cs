@@ -76,6 +76,8 @@ public partial class Pages_Login : System.Web.UI.Page
             ShowError("Invalid admin credentials.");
             txtAdminPwd.Text = "";
         }
+
+
     }
 
     private void ShowError(string msg)

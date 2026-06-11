@@ -94,7 +94,7 @@ GO
 INSERT INTO Admins (Username, PasswordHash, FullName)
 VALUES (
     'admin',
-    'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec',
+    'e86f78a8a3caf0b60d8e74e5942aa6d86dc150cd3c03338aef25b7d2d7e3acc7',
     'Club Administrator'
 );
 GO
